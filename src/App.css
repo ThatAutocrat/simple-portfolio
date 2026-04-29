@@ -1,38 +1,217 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --hue: 207;
+  --sat: 90%;
+  --lig: 61%;
+  --first-color: hsl(var(--hue), var(--sat), var(--lig));
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: hsl(var(--hue), 12%, 45%);
+  --text-color-light: hsl(var(--hue), 8%, 75%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #fff;
+  --body-font: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+.container {
+  max-width: 968px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 3rem 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Profile */
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.profile__data {
+  text-align: center;
+}
+
+.profile__perfil {
+  width: 100px;
+  height: 100px;
+  border-radius: 60%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.profile__perfil img {
+  width: 100px;
+}
+
+.profile__border {
+  border: 3.5px solid var(--first-color);
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto .75rem;
 }
 
-.App-link {
-  color: #61dafb;
+.profile__name {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.profile__name:hover {
+  -webkit-text-stroke: 2px #0ab7f6;
+  color: transparent;
+}
+
+.profile__profession {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.profile__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.profile__social-link {
+  font-size: 2.5rem;
+  color: var(--title-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.profile__social-link:hover {
+  color: red;
+}
+
+/* Info Section */
+.profile__info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.profile__info-group {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile__info-group:hover {
+  color: red;
+}
+
+.profile__info-number {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  color: var(--title-color);
+}
+
+.profile__info-description {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Buttons */
+.profile__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.profile__buttons-small {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: chartreuse;
+  color: #333;
+}
+
+.button__small {
+  padding: 0.75rem;
+}
+
+.button i {
+  font-size: 1.25rem;
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem 0;
+  text-align: center;
+  background-color: var(--container-color);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media screen and (min-width: 768px) {
+  .profile__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .profile__name {
+    font-size: 2rem;
   }
 }
